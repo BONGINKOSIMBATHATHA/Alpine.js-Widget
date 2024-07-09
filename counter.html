@@ -38,10 +38,10 @@
 </head>
 <body>
     <h1>Counter Widget with Alpine.js</h1>
-    <div x-data="counter()">
-        <p class="counter-display">Count: <span x-text="count"></span></p>
-        <button @click="decrement()">Decrement</button>
-        <button @click="increment()">Increment</button>
+    <div x-data="{ counter: 0 }">
+        <div class="counter-display" x-text="counter"></div>
+        <button @click="counter++">Increment</button>
+        <button @click="counter > 0 ? counter-- : 0">Decrement</button>
     </div>
 
     <!-- Alpine.js and Custom JS Files -->
